@@ -1,6 +1,6 @@
 {
 	"asset":{
-		"generator":"Khronos glTF Blender I/O v4.2.60",
+		"generator":"Khronos glTF Blender I/O v4.2.69",
 		"version":"2.0"
 	},
 	"extensionsUsed":[
@@ -42,6 +42,10 @@
 	"scene":0,
 	"scenes":[
 		{
+			"extras":{
+				"uuid":"7ca3e365-2b4a-44bc-9ff2-cb486836a6aa",
+				"assets reported":{}
+			},
 			"name":"Scene",
 			"nodes":[
 				12
@@ -211,6 +215,198 @@
 			"name":"Support"
 		}
 	],
+	"animations":[
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":10,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"SuportJointL",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":57
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":10,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"SuportJointR",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":58
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":8,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"LongArmB",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":59
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":8,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"LongArmF",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":60
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":7,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"ShortArmB",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":61
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":7,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"ShortArmF",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":62
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":6,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"ArmToAbajurB",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":63
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":6,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"ArmToAbajurF",
+			"samplers":[
+				{
+					"input":56,
+					"interpolation":"LINEAR",
+					"output":64
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":5,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"AbajurJointL",
+			"samplers":[
+				{
+					"input":65,
+					"interpolation":"LINEAR",
+					"output":66
+				}
+			]
+		},
+		{
+			"channels":[
+				{
+					"sampler":0,
+					"target":{
+						"node":5,
+						"path":"rotation"
+					}
+				}
+			],
+			"name":"AbajurJointR",
+			"samplers":[
+				{
+					"input":65,
+					"interpolation":"LINEAR",
+					"output":67
+				}
+			]
+		}
+	],
 	"materials":[
 		{
 			"doubleSided":true,
@@ -265,20 +461,6 @@
 			"name":"LightBulbBase",
 			"pbrMetallicRoughness":{
 				"metallicFactor":0.7559055089950562
-			}
-		},
-		{
-			"doubleSided":true,
-			"name":"SupportJointMaterial",
-			"pbrMetallicRoughness":{
-				"baseColorFactor":[
-					0,
-					0,
-					0,
-					1
-				],
-				"metallicFactor":0.25196850299835205,
-				"roughnessFactor":0.7283464670181274
 			}
 		},
 		{
@@ -432,7 +614,7 @@
 						"TEXCOORD_0":42
 					},
 					"indices":43,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -460,7 +642,7 @@
 						"TEXCOORD_0":50
 					},
 					"indices":51,
-					"material":5
+					"material":4
 				}
 			]
 		},
@@ -474,7 +656,7 @@
 						"TEXCOORD_0":54
 					},
 					"indices":55,
-					"material":5
+					"material":4
 				}
 			]
 		}
@@ -955,6 +1137,90 @@
 			"componentType":5123,
 			"count":348,
 			"type":"SCALAR"
+		},
+		{
+			"bufferView":56,
+			"componentType":5126,
+			"count":30,
+			"max":[
+				1.25
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":57,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":58,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":59,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":60,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":61,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":62,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":63,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":64,
+			"componentType":5126,
+			"count":30,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":65,
+			"componentType":5126,
+			"count":20,
+			"max":[
+				0.8333333333333334
+			],
+			"min":[
+				0.041666666666666664
+			],
+			"type":"SCALAR"
+		},
+		{
+			"bufferView":66,
+			"componentType":5126,
+			"count":20,
+			"type":"VEC4"
+		},
+		{
+			"bufferView":67,
+			"componentType":5126,
+			"count":20,
+			"type":"VEC4"
 		}
 	],
 	"bufferViews":[
@@ -1293,11 +1559,71 @@
 			"byteLength":696,
 			"byteOffset":129712,
 			"target":34963
+		},
+		{
+			"buffer":0,
+			"byteLength":120,
+			"byteOffset":130408
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":130528
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":131008
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":131488
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":131968
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":132448
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":132928
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":133408
+		},
+		{
+			"buffer":0,
+			"byteLength":480,
+			"byteOffset":133888
+		},
+		{
+			"buffer":0,
+			"byteLength":80,
+			"byteOffset":134368
+		},
+		{
+			"buffer":0,
+			"byteLength":320,
+			"byteOffset":134448
+		},
+		{
+			"buffer":0,
+			"byteLength":320,
+			"byteOffset":134768
 		}
 	],
 	"buffers":[
 		{
-			"byteLength":130408,
+			"byteLength":135088,
 			"uri":"ApliqueArticuladoPecaUnica.bin"
 		}
 	]
