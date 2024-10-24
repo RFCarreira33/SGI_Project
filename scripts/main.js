@@ -21,7 +21,10 @@ abajur_btn.addEventListener("change", (e) => {
     return;
   }
 
-  const name = e.target.value > 0 ? ANIMATION_NAMES.ARM_TO_ABAJUR_F : ANIMATION_NAMES.ARM_TO_ABAJUR_B;
+  const name =
+    e.target.value > 0
+      ? ANIMATION_NAMES.ARM_TO_ABAJUR_F
+      : ANIMATION_NAMES.ARM_TO_ABAJUR_B;
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
@@ -33,7 +36,10 @@ longArm_btn.addEventListener("change", (e) => {
     return;
   }
 
-  const name = e.target.value > 0 ? ANIMATION_NAMES.LONG_ARM_F : ANIMATION_NAMES.LONG_ARM_B;
+  const name =
+    e.target.value > 0
+      ? ANIMATION_NAMES.LONG_ARM_F
+      : ANIMATION_NAMES.LONG_ARM_B;
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
@@ -45,7 +51,10 @@ shortArm_btn.addEventListener("change", (e) => {
     return;
   }
 
-  const name = e.target.value > 0 ? ANIMATION_NAMES.SHORT_ARM_F : ANIMATION_NAMES.SHORT_ARM_B;
+  const name =
+    e.target.value > 0
+      ? ANIMATION_NAMES.SHORT_ARM_F
+      : ANIMATION_NAMES.SHORT_ARM_B;
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
@@ -57,7 +66,8 @@ support_btn.addEventListener("change", (e) => {
     return;
   }
 
-  const name = e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
+  const name =
+    e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
@@ -69,18 +79,16 @@ armToAbajur_btn.addEventListener("change", (e) => {
     return;
   }
 
-  const name = e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
+  const name =
+    e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
 color_picker.addEventListener("change", (event) => {
-  const texture = textureLoader.load("/images/texture.png");
-  const material = new THREE.MeshBasicMaterial({ map: texture });
   // create material from color
   const color = new THREE.Color(event.target.value);
-  material.color = color;
-  abajurMesh.material = material;
+  abajurMesh.material.color = color;
 });
 
 // Criar cena do threeJS e expor na consola
@@ -91,6 +99,7 @@ window.cena = scene;
 // Criar Renderer
 canvas = document.getElementById("three-canvas");
 renderer = new THREE.WebGLRenderer({ canvas });
+renderer.shadowMap.enabled = true;
 renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 // renderer.setSize(window.innerWidth, window.innerHeight)
 // document.body.appendChild(renderer.domElement)
@@ -102,11 +111,15 @@ camera = new THREE.PerspectiveCamera(
   1,
   1000,
 );
+
 controls = new OrbitControls(camera, renderer.domElement);
-camera.position.set(-10, 5, 8);
-camera.lookAt(10, 10, 10);
-console.log(camera)
-controls.update();
+var minPan = new THREE.Vector3( - 2, - 2, - 2 );
+var maxPan = new THREE.Vector3( 2, 2, 2 );
+controls.target.clamp(minPan, maxPan);
+camera.position.x = -5;
+camera.position.y = 8;
+camera.position.z = 13;
+camera.lookAt(0, 0, 0);
 
 // Carregar modelo, ajustar luzes, e preparar cena exemplo
 new GLTFLoader().load(
@@ -128,7 +141,26 @@ new GLTFLoader().load(
     });
 
     suporte = scene.getObjectByName("Support");
+
+    const steel_texture = textureLoader.load("/images/texture.png");
     abajurMesh = scene.getObjectByName("AbajurMesh");
+
+    gltf.scene.traverse(function (x) {
+      if (x.isMesh) {
+        x.material = new THREE.MeshPhongMaterial({
+          color: 0xede5dd,
+          specular: 0x373737,
+          shininess: 80,
+          map: steel_texture,
+          side: THREE.DoubleSide,
+        });
+
+        abajurMesh.material.map = steel_texture;
+        x.castShadow = true;
+        x.receiveShadow = true;
+      }
+      cena.add(gltf.scene);
+    });
 
     // Configurar das fontes luminosas do modelo
     const ponto_luminoso = scene.getObjectByName("Point");
