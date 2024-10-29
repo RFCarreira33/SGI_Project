@@ -2,19 +2,27 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import * as SGI_Example from "./example_scene.min.js";
-import { ANIMATION_NAMES, AnimationsMap, PlayAnimation } from "./animations.js";
+import { ANIMATION_NAMES, AnimationsMap, PlayAnimation } from "./helpers.js";
+import { TEXTURES_PATH } from "./helpers.js";
 
 // Model parts
 let suporte, lampada_cilindrica, lampada_esferica, abajurMesh;
 
 // Environment
 let mixer, scene, renderer, camera, controls, canvas, textureLoader;
+textureLoader = new THREE.TextureLoader();
 
 // Constants
 const cor_default = new THREE.Color(0xffffff);
-const color_picker = document.getElementById("color-picker");
+const steel_texture = textureLoader.load(TEXTURES_PATH+"/steel.png")
 
+// Interactions buttons
 const abajur_btn = document.getElementById("abajur-btn");
+const longArm_btn = document.getElementById("longArm-btn");
+const shortArm_btn = document.getElementById("shortArm-btn");
+const support_btn = document.getElementById("support-btn");
+const armToAbajur_btn = document.getElementById("armToAbajur-btn");
+const color_picker = document.getElementById("color-picker");
 
 abajur_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -29,7 +37,6 @@ abajur_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-const longArm_btn = document.getElementById("longArm-btn");
 
 longArm_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -44,7 +51,6 @@ longArm_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-const shortArm_btn = document.getElementById("shortArm-btn");
 
 shortArm_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -59,7 +65,6 @@ shortArm_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-const support_btn = document.getElementById("support-btn");
 
 support_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -72,7 +77,6 @@ support_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-const armToAbajur_btn = document.getElementById("armToAbajur-btn");
 
 armToAbajur_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -92,7 +96,6 @@ color_picker.addEventListener("change", (event) => {
 });
 
 // Criar cena do threeJS e expor na consola
-textureLoader = new THREE.TextureLoader();
 scene = new THREE.Scene();
 window.cena = scene;
 
@@ -142,7 +145,6 @@ new GLTFLoader().load(
 
     suporte = scene.getObjectByName("Support");
 
-    const steel_texture = textureLoader.load("/images/texture.png");
     abajurMesh = scene.getObjectByName("AbajurMesh");
 
     gltf.scene.traverse(function (x) {
@@ -161,6 +163,7 @@ new GLTFLoader().load(
       }
       cena.add(gltf.scene);
     });
+
 
     // Configurar das fontes luminosas do modelo
     const ponto_luminoso = scene.getObjectByName("Point");

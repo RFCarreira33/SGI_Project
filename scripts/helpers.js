@@ -1,5 +1,7 @@
 import * as THREE from "three";
 
+export const TEXTURES_PATH = "/assets/textures";
+
 export const ANIMATION_NAMES = Object.freeze({
   ABAJUR_R: "AbajurJointR",
   ABAJUR_L: "AbajurJointL",
@@ -52,3 +54,5 @@ export function PlayAnimation(animation, state = undefined) {
 
   return !state;
 }
+
+

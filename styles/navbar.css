@@ -1,0 +1,50 @@
+.dropdown:hover>.dropdown-menu {
+  display: block;
+}
+
+.menu_icons {
+  cursor: pointer;
+}
+
+.information-grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 4rem;
+  margin: 1.5rem;
+
+  .dropdown-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .link_menu {
+    text-decoration: none;
+    color: gray;
+    font-size: smaller;
+
+    &:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+  }
+}
+
+.dropdown-heading {
+  margin-bottom: 1rem;
+}
+
+.nav-item>.nav-link {
+  transition: all 0.3s cubic-bezier(0.31, 0.32, 0.38, 2);
+}
+
+.nav-link {
+  &:hover {
+    border-bottom: 2px solid var(--accent-color);
+    transition: all 0.3s cubic-bezier(0.31, 0.32, 0.38, 2);
+  }
+
+  &.active {
+    border-bottom: 2px solid var(--accent-color);
+  }
+}

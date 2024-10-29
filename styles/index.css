@@ -1,0 +1,11 @@
+:root {
+  --white: #fff;
+  --accent-color: #00565f;
+  font-family: "Poppins", Arial, sans-serif;
+}
+
+.banner {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+}
