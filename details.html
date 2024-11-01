@@ -151,18 +151,70 @@
           <i class='fa fa-lg fa-heart ms-3' title="Favoritos"></i>
           <i class='fa fa-lg fa-cart-alt ms-3' title="Carrinho compras"></i>
         </div>
-
       </div>
     </div>
   </nav>
   <img class="banner" src=assets/images/banner.png />
   <br />
   <br />
-  <div id="index-component" class="container">
-    Index
-    <br />
-    <br />
-    <a id="test" href="details.html">Details</a>
+  <div id="details-component" class="container">
+    <div class="row">
+      <div class="col-6">
+        <canvas id="three-canvas"></canvas>
+      </div>
+      <div class="col-6">
+        <h4>Check adjustments</h4>
+        <br />
+        <div class="row">
+          <div class="col-4 text-end">
+            Abajur
+          </div>
+          <div class="col-8">
+            <input type="range" min="0" max="2" value="1" id="abajur-btn">
+          </div>
+
+          <div class="col-4 text-end">
+            Arm to Abajur
+          </div>
+          <div class="col-8">
+            <input type="range" min="0" max="2" value="1" id="armToAbajur-btn">
+          </div>
+
+          <div class="col-4 text-end">
+            Short Arm
+          </div>
+          <div class="col-8">
+            <input type="range" min="0" max="2" value="1" id="shortArm-btn">
+          </div>
+
+          <div class="col-4 text-end">
+            Long Arm
+          </div>
+          <div class="col-8">
+            <input type="range" min="0" max="2" value="1" id="longArm-btn">
+          </div>
+
+          <div class="col-4 text-end">
+            Support
+          </div>
+          <div class="col-8">
+            <input type="range" min="0" max="2" value="1" id="support-btn">
+          </div>
+
+        </div>
+
+        <br />
+        <h4>Costumize</h4>
+        <div class="row">
+          <div class="col-4 text-end">
+            Color pick Mesh
+          </div>
+          <div class="col-8">
+            <input type="color" id="color-picker" value="#ffffff" style="width: 30%;">
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <br />
   <br />
@@ -263,6 +315,17 @@
     </section>
   </footer>
 
+
+  <!-- <script async src="/node_modules/es-module-shims.js"></script> -->
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "/node_modules/three/build/three.module.js",
+        "three/addons/": "/node_modules/three/examples/jsm/"
+        }
+      }
+    </script>
+  <script type="module" defer src="./scripts/main.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

@@ -1,6 +1,12 @@
 .footer {
   background-color: var(--accent-color);
   text-align: start;
+
+  & img {
+    min-height: 28px;
+    max-height: 32px;
+    padding-right: 0.25rem;
+  }
 }
 
 .footer-link {
@@ -15,5 +21,15 @@
 }
 
 .footer-fade {
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: var(--fade-accent-color);
+}
+
+.socials {
+  text-align: left;
+  text-decoration: none;
+}
+
+.payment-methods {
+  text-align: right;
+  text-decoration: none;
 }

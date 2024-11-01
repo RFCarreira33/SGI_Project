@@ -14,7 +14,7 @@ textureLoader = new THREE.TextureLoader();
 
 // Constants
 const cor_default = new THREE.Color(0xffffff);
-const steel_texture = textureLoader.load(TEXTURES_PATH+"/steel.png")
+const steel_texture = textureLoader.load(TEXTURES_PATH + "/steel.png");
 
 // Interactions buttons
 const abajur_btn = document.getElementById("abajur-btn");
@@ -23,6 +23,17 @@ const shortArm_btn = document.getElementById("shortArm-btn");
 const support_btn = document.getElementById("support-btn");
 const armToAbajur_btn = document.getElementById("armToAbajur-btn");
 const color_picker = document.getElementById("color-picker");
+
+const test_btn = document.getElementById("test");
+const details_component = document.getElementById("details-component");
+const index_component = document.getElementById("index-component");
+
+if (test_btn !== null) {
+  test_btn.addEventListener("click", (_) => {
+    index_component.classList.toggle("d-none");
+    details_component.classList.toggle("d-none");
+  });
+}
 
 abajur_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -37,7 +48,6 @@ abajur_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-
 longArm_btn.addEventListener("change", (e) => {
   if (!mixer) {
     return;
@@ -50,7 +60,6 @@ longArm_btn.addEventListener("change", (e) => {
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
-
 
 shortArm_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -65,7 +74,6 @@ shortArm_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-
 support_btn.addEventListener("change", (e) => {
   if (!mixer) {
     return;
@@ -76,7 +84,6 @@ support_btn.addEventListener("change", (e) => {
   let animation = AnimationsMap.get(name);
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
-
 
 armToAbajur_btn.addEventListener("change", (e) => {
   if (!mixer) {
@@ -103,7 +110,7 @@ window.cena = scene;
 canvas = document.getElementById("three-canvas");
 renderer = new THREE.WebGLRenderer({ canvas });
 renderer.shadowMap.enabled = true;
-renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+renderer.setSize(canvas.clientWidth * 2, canvas.clientHeight * 2);
 // renderer.setSize(window.innerWidth, window.innerHeight)
 // document.body.appendChild(renderer.domElement)
 
@@ -116,9 +123,9 @@ camera = new THREE.PerspectiveCamera(
 );
 
 controls = new OrbitControls(camera, renderer.domElement);
-var minPan = new THREE.Vector3( - 2, - 2, - 2 );
-var maxPan = new THREE.Vector3( 2, 2, 2 );
-controls.target.clamp(minPan, maxPan);
+// var minPan = new THREE.Vector3( - 2, - 2, - 2 );
+// var maxPan = new THREE.Vector3( 2, 2, 2 );
+// controls.target.clamp(minPan, maxPan);
 camera.position.x = -5;
 camera.position.y = 8;
 camera.position.z = 13;
@@ -144,7 +151,6 @@ new GLTFLoader().load(
     });
 
     suporte = scene.getObjectByName("Support");
-
     abajurMesh = scene.getObjectByName("AbajurMesh");
 
     gltf.scene.traverse(function (x) {
@@ -163,7 +169,6 @@ new GLTFLoader().load(
       }
       cena.add(gltf.scene);
     });
-
 
     // Configurar das fontes luminosas do modelo
     const ponto_luminoso = scene.getObjectByName("Point");

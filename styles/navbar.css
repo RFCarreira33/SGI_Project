@@ -16,22 +16,22 @@
     display: flex;
     flex-direction: column;
     gap: 0.35rem;
-  }
 
-  .link_menu {
-    text-decoration: none;
-    color: gray;
-    font-size: smaller;
+    & a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: smaller;
 
-    &:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
+      &:hover {
+        color: var(--accent-color);
+        text-decoration: underline;
+      }
+
+      &:last-child {
+        color: var(--accent-color);
+      }
     }
   }
-}
-
-.dropdown-heading {
-  margin-bottom: 1rem;
 }
 
 .nav-item>.nav-link {

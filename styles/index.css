@@ -1,6 +1,9 @@
 :root {
   --white: #fff;
+  --text: #212529;
+  --text-secondary: #918f8d;
   --accent-color: #00565f;
+  --fade-accent-color: #00454c;
   font-family: "Poppins", Arial, sans-serif;
 }
 
