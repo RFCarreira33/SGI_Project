@@ -1,6 +1,7 @@
 import * as THREE from "three";
 
 export const TEXTURES_PATH = "/assets/textures";
+export const PRODUCTS_PATH = "/assets/products";
 
 export const ANIMATION_NAMES = Object.freeze({
   ABAJUR_R: "AbajurJointR",
@@ -56,3 +57,17 @@ export function PlayAnimation(animation, state = undefined) {
 }
 
 
+/*
+ * React aproach to load components
+*/
+
+const navbar = $("#navbar-component");
+const footer = $("#footer-component");
+
+if (navbar !== null) {
+  navbar.load("components/navbar.html");
+}
+
+if (footer !== null) {
+  footer.load("components/footer.html");
+}

@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Candeeiro de pé, SGI",
+    "price": 84.99,
+    "discount": null,
+    "image": "mesa.jpg"
+  },
+  {
+    "name": "Espelho quadrado, Vaguo",
+    "price": 99.99,
+    "discount": 20,
+    "image": "espelho.jpg"
+  },
+  {
+    "name": "Mesa de centro, Malu",
+    "price": 261.99,
+    "discount": 29,
+    "image": "mesa.jpg"
+  },
+  {
+    "name": "Cave de vinhos, HAEGER",
+    "price": 249.99,
+    "discount": 29,
+    "image": "cave_vinhos.jpg"
+  },
+  {
+    "name": "Capa de almofada macia, Colton",
+    "price": 69.99,
+    "discount": 36,
+    "image": "almofada.jpg"
+  },
+  {
+    "name": "Cabine de parede, Anies",
+    "price": 88.99,
+    "discount": 20,
+    "image": "cabine.jpg"
+  },
+  {
+    "name": "Conjunto 6 pratos, Anies",
+    "price": 59.99,
+    "discount": null,
+    "image": "prato.jpg"
+  },
+  {
+    "name": "Cabeceira com arrumação, Fabi",
+    "price": 599.99,
+    "discount": null,
+    "image": "cabeceira.jpg"
+  }
+]

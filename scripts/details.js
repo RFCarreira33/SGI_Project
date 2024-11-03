@@ -2,8 +2,8 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import * as SGI_Example from "./example_scene.min.js";
-import { ANIMATION_NAMES, AnimationsMap, PlayAnimation } from "./helpers.js";
-import { TEXTURES_PATH } from "./helpers.js";
+import { ANIMATION_NAMES, AnimationsMap, PlayAnimation } from "./common.js";
+import { TEXTURES_PATH } from "./common.js";
 
 // Model parts
 let suporte, lampada_cilindrica, lampada_esferica, abajurMesh;
@@ -17,25 +17,14 @@ const cor_default = new THREE.Color(0xffffff);
 const steel_texture = textureLoader.load(TEXTURES_PATH + "/steel.png");
 
 // Interactions buttons
-const abajur_btn = document.getElementById("abajur-btn");
-const longArm_btn = document.getElementById("longArm-btn");
-const shortArm_btn = document.getElementById("shortArm-btn");
-const support_btn = document.getElementById("support-btn");
-const armToAbajur_btn = document.getElementById("armToAbajur-btn");
-const color_picker = document.getElementById("color-picker");
+const abajur_btn = $("#abajur-btn");
+const longArm_btn = $("#longArm-btn");
+const shortArm_btn = $("#shortArm-btn");
+const support_btn = $("#support-btn");
+const armToAbajur_btn = $("#armToAbajur-btn");
+const color_picker = $("#color-picker");
 
-const test_btn = document.getElementById("test");
-const details_component = document.getElementById("details-component");
-const index_component = document.getElementById("index-component");
-
-if (test_btn !== null) {
-  test_btn.addEventListener("click", (_) => {
-    index_component.classList.toggle("d-none");
-    details_component.classList.toggle("d-none");
-  });
-}
-
-abajur_btn.addEventListener("change", (e) => {
+abajur_btn.on("change", (e) => {
   if (!mixer) {
     return;
   }
@@ -48,7 +37,7 @@ abajur_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-longArm_btn.addEventListener("change", (e) => {
+longArm_btn.on("change", (e) => {
   if (!mixer) {
     return;
   }
@@ -61,7 +50,7 @@ longArm_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-shortArm_btn.addEventListener("change", (e) => {
+shortArm_btn.on("change", (e) => {
   if (!mixer) {
     return;
   }
@@ -74,7 +63,7 @@ shortArm_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-support_btn.addEventListener("change", (e) => {
+support_btn.on("change", (e) => {
   if (!mixer) {
     return;
   }
@@ -85,7 +74,7 @@ support_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-armToAbajur_btn.addEventListener("change", (e) => {
+armToAbajur_btn.on("change", (e) => {
   if (!mixer) {
     return;
   }
@@ -96,7 +85,7 @@ armToAbajur_btn.addEventListener("change", (e) => {
   animation.state = PlayAnimation(animation.animation, animation.state);
 });
 
-color_picker.addEventListener("change", (event) => {
+color_picker.on("change", (event) => {
   // create material from color
   const color = new THREE.Color(event.target.value);
   abajurMesh.material.color = color;

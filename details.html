@@ -6,6 +6,9 @@
   <title>Projeto prático Avaliação SGI</title>
   <link rel="icon" type="image/x-icon" href="https://www.laredoute.pt/images/favicon.png">
 
+  <!-- Jquery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
   <!-- Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -27,142 +30,16 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light py-4">
-    <div class="container">
-      <a class="navbar-brand" href="index.html">
-        <img src="assets/images/logo.svg" alt="La Redoute" height="32" class="d-inline-block align-text-top">
-      </a>
-
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <ul class="navbar-nav m-auto mb-2 mb-lg-0">
-
-          <li class="nav-item active dropdown">
-            <a class="nav-link active" href="#" id="navbarDropdown" data-bs-toggle="dropdown" aria-expanded="false">
-              Casa
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div class="information-grid">
-                <div class="dropdown-colum">
-                  <div class="mb-3">Mobiliário</div>
-                  <div class="dropdown-links">
-                    <a href="#">Aparadores, louceiros</a>
-                    <a href="#">Armários, guarda fatos</a>
-                    <a href="#">Cómodas, camiseiros</a>
-                    <a href="#">Móveis TV, audio</a>
-                    <a href="#">Móveis de escritório</a>
-                    <a href="#">Biblioteca</a>
-                    <a href="#">Prateleiras</a>
-                    <a href="#">Móveis de casa de banho</a>
-                    <a href="#">Ver categoria</a>
-                  </div>
-                </div>
-
-                <div class="dropdown-colum">
-                  <div class="mb-3">Têxtil</div>
-                  <div class="dropdown-links">
-                    <a href="#">Roupa de cama</a>
-                    <a href="#">Atoalhados</a>
-                    <a href="#">Cortinados, estores</a>
-                    <a href="#">Almofadas, capas de almofadas </a>
-                    <a href="#">Tapetes </a>
-                    <a href="#">Têxtil de mesa </a>
-                    <a href="#">Ver categoria </a>
-                  </div>
-                </div>
-
-                <div class="dropdown-colum">
-                  <div class="mb-3">Decoração</div>
-                  <div class="dropdown-links">
-                    <a href="#">Espelhos</a>
-                    <a href="#">Pequena decoração</a>
-                    <a href="#">Decoração de pareda</a>
-                    <a href="#">Arrumação decoratia</a>
-                    <a href="#">Loiça, talheres</a>
-                    <a href="#">Decoração de jardim</a>
-                    <a href="#">Ver categoria </a>
-                  </div>
-                </div>
-              </div>
-
-            </div>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link" href="#">Moda</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <div class="information-grid">
-                <div class="dropdown-colum">
-                  <div class="mb-3">Mulher</div>
-                  <div class="dropdown-links">
-                    <a href="#">Roupa</a>
-                    <a href="#">Lingerie e Roupa de dormir</a>
-                    <a href="#">Calçado</a>
-                    <a href="#">Carteiras e acessórios</a>
-                    <a href="#">Tamanhos grandes</a>
-                    <a href="#">Desporto</a>
-                    <a href="#">Ver categoria</a>
-                  </div>
-                </div>
-
-                <div class="dropdown-colum">
-                  <div class="mb-3">Homem</div>
-                  <div class="dropdown-links">
-                    <a href="#">Roupa</a>
-                    <a href="#">Calçado</a>
-                    <a href="#">Roupa interior</a>
-                    <a href="#">Tamanhos grandes</a>
-                    <a href="#">Desporto</a>
-                    <a href="#">Acessórios</a>
-                    <a href="#">Ver categoria</a>
-                  </div>
-                </div>
-
-                <div class="dropdown-colum">
-                  <div class="mb-3">Criança, Bebé</div>
-                  <div class="dropdown-links">
-                    <a href="#">Bebé 0 - 12 meses</a>
-                    <a href="#">Bebé Menino 0 - 3 anos</a>
-                    <a href="#">Bebé Menina 0 - 3 anos</a>
-                    <a href="#">Menino 3 - 14 anos</a>
-                    <a href="#">Menina 3 - 14 anos</a>
-                    <a href="#">Rapariga</a>
-                    <a href="#">Rapaz</a>
-                    <a href="#">Brinquedos</a>
-                    <a href="#">Ver categoria</a>
-                  </div>
-                </div>
-              </div>
-          </li>
-          <li class="nav-item"><a class="nav-link" href="#"> Top Vendas </a></li>
-          <li class="nav-item"><a class="nav-link" href="#"> Marcas </a></li>
-          <li class="nav-item"><a class="nav-link" href="#"> Outlet </a></li>
-
-        </ul>
-
-        <div class="d-flex menu_icons">
-          <i class='fa fa-lg fa-search' title="Pesquisa"></i>
-          <i class='fa fa-lg fa-user ms-3' title="Conta"></i>
-          <i class='fa fa-lg fa-heart ms-3' title="Favoritos"></i>
-          <i class='fa fa-lg fa-cart-alt ms-3' title="Carrinho compras"></i>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <div id="navbar-component"></div>
   <img class="banner" src=assets/images/banner.png />
   <br />
   <br />
   <div id="details-component" class="container">
     <div class="row">
-      <div class="col-6">
+      <div class="col-8">
         <canvas id="three-canvas"></canvas>
       </div>
-      <div class="col-6">
+      <div class="col-4">
         <h4>Check adjustments</h4>
         <br />
         <div class="row">
@@ -210,7 +87,7 @@
             Color pick Mesh
           </div>
           <div class="col-8">
-            <input type="color" id="color-picker" value="#ffffff" style="width: 30%;">
+            <input type="color" id="color-picker" value="#ffffff" style="width: 50%;">
           </div>
         </div>
       </div>
@@ -218,103 +95,7 @@
   </div>
   <br />
   <br />
-  <footer class="footer pt-1 text-white">
-    <section>
-      <div class="container mt-5">
-        <div class="row mt-2">
-          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-2">
-            <!-- Links -->
-            <h6 class="text-uppercase fw-bold">LA REDOUTE</h6>
-            <p>
-              <a href="#" class="footer-link">Quem somos</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Contactos</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">
-                Sustentabilidade e responsabilidade social
-              </a>
-            </p>
-          </div>
-
-          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-2">
-            <h6 class="text-uppercase fw-bold">Serviços</h6>
-            <p>
-              <a href="#" class="footer-link">Ajuda</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Trocas & Devoluções</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Recolha e montagem</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Todos os serviços</a>
-            </p>
-          </div>
-
-          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-2">
-            <h6 class="text-uppercase fw-bold">Marcas exclusivas</h6>
-            <p>
-              <a href="#" class="footer-link">La Redoute Collections</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">La Redoute Intérieurs</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">AM.PM.</a>
-            </p>
-          </div>
-
-          <div class="col-md-6 col-lg-6 col-xl-3 mx-auto mb-2">
-            <h6 class="text-uppercase fw-bold">UNIVERSO LA REDOUTE</h6>
-            <p>
-              <a href="#" class="footer-link">Inspiração</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Vídeos</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">Profissionais</a>
-            </p>
-            <p>
-              <a href="#" class="footer-link">APP La Redoute</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section class="footer-fade">
-      <div class="container p-3 d-flex justify-content-between">
-
-        <div class="socials p-3">
-          <a href="#"><img src="assets/images/facebook.svg"></img></a>
-          <a href="#"><img src="assets/images/insta.svg"></img></a>
-          <a href="#"><img height="32" src="assets/images/twitter.svg"></img></a>
-          <a href="#"><img src="assets/images/pinterest.svg"></img></a>
-          <a href="#"><img src="assets/images/yt.svg"></img></a>
-        </div>
-
-        <div class="payment-methods p-3">
-          <div class="pb-1">
-            <a href="#"><img src="assets/images/visa.svg"></img></a>
-            <a href="#"><img src="assets/images/mbway.svg"></img></a>
-            <a href="#"><img src="assets/images/multibanco.svg"></img></a>
-            <a href="#"><img src="assets/images/klarma.svg"></img></a>
-          </div>
-          <div>
-            <a href="#"><img src="assets/images/applepay.svg"></img></a>
-            <a href="#"><img src="assets/images/googlepay.svg"></img></a>
-            <a href="#"><img src="assets/images/mastercard.svg"></img></a>
-            <a href="#"><img src="assets/images/paypal.svg"></img></a>
-          </div>
-        </div>
-
-      </div>
-    </section>
-  </footer>
-
+  <div id="footer-component"></div>
 
   <!-- <script async src="/node_modules/es-module-shims.js"></script> -->
   <script type="importmap">
@@ -325,7 +106,10 @@
         }
       }
     </script>
-  <script type="module" defer src="./scripts/main.js"></script>
+
+  <script type="module" defer src="./scripts/details.js"></script>
+  <script type="module" src="scripts/common.js"></script>
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"></script>

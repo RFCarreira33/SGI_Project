@@ -1,4 +1,4 @@
-:root {
+* {
   --white: #fff;
   --text: #212529;
   --text-secondary: #918f8d;
@@ -11,4 +11,35 @@
   height: 300px;
   width: 100%;
   object-fit: cover;
+}
+
+.card {
+  border-radius: 5px;
+  padding: 0 0 10px 0;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  min-height: 350px;
+  margin: 10px;
+
+  & .card-info {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+
+    & .price-div {
+      font-size: smaller;
+      margin-top: auto;
+    }
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+ filter: invert(40%);
 }
