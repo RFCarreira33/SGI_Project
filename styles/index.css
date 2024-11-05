@@ -41,5 +41,26 @@
 
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
- filter: invert(40%);
+  filter: invert(40%);
+}
+
+.perks {
+  color: var(--white);
+
+  & i {
+    font-size: 1.5rem;
+  }
+
+  & .perk-card {
+    border-radius: 5px;
+    padding: 20px;
+    min-height: 150px;
+    background-color: var(--accent-color);
+    /* add a diagonal fade effect */
+    background: linear-gradient(
+      45deg,
+      var(--accent-color) 50%,
+      var(--fade-accent-color) 50%
+    );
+  }
 }
