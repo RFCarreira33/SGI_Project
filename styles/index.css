@@ -19,6 +19,11 @@
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
   min-height: 350px;
   margin: 10px;
+  transition: transform 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
 
   & .card-info {
     padding: 20px 24px;
@@ -57,10 +62,8 @@
     min-height: 150px;
     background-color: var(--accent-color);
     /* add a diagonal fade effect */
-    background: linear-gradient(
-      45deg,
-      var(--accent-color) 50%,
-      var(--fade-accent-color) 50%
-    );
+    background: linear-gradient(45deg,
+        var(--accent-color) 50%,
+        var(--fade-accent-color) 50%);
   }
 }

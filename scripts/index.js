@@ -1,3 +1,9 @@
+const campaigns = $("#campaigns-component");
+
+if (campaigns !== null) {
+  campaigns.load("components/campaigns.html");
+}
+
 $.getJSON("assets/data/products.json", (data) => {
   const carousel = $("#carousel-component");
   if (!carousel) return;
