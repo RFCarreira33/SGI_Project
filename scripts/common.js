@@ -2,6 +2,7 @@ import * as THREE from "three";
 
 export const TEXTURES_PATH = "/assets/textures";
 export const PRODUCTS_PATH = "/assets/products";
+const SPEED_MULTIPLIER = 0.5;
 
 export const ANIMATION_NAMES = Object.freeze({
   ABAJUR_R: "AbajurJointR",
@@ -17,49 +18,46 @@ export const ANIMATION_NAMES = Object.freeze({
 });
 
 /**
- * @typedef {Object} AnimationState
- * @property {THREE.AnimationAction} animation - The THREE.js animation action.
- * @property {boolean} state - The state of the animation (true/false).
+ * Map animation name to their respective THREE.js animation action.
+ * Both forward and backward animations are stored in an array.
+ * @type {Map<string, [THREE.AnimationAction]>}
  */
-
-/**
- * @type {Map<string, AnimationState>}
- */
-export let AnimationsMap = new Map();
+export const AnimationsMap = new Map();
 
 /**
  * Plays an animation based on the provided state.
  *
- * @param {THREE.AnimationAction} animation - The THREE.js animation action that you want to play.
- * @param {boolean} [state=undefined] - Optional. Determines the playback mode:
- *  - `true`: Plays the animation in reverse and stops when finished (LoopOnce, timeScale -1).
- *  - `false`: Resets and plays the animation in ping-pong mode (LoopPingPong, timeScale 1).
- *  - `undefined`: Defaults to LoopPingPong behavior with repetitions.
- *
- * @returns {boolean|undefined} - The current state of the animation after execution.
- *  - `undefined` if no state is provided.
+ * @param {string} animation_enum - The animation to play.
  */
-export function PlayAnimation(animation, state = undefined) {
-  if (state === undefined) {
-    animation.reset();
-    animation.setLoop(THREE.LoopPingPong);
-    animation.repetitions = 2;
-  } else {
-    animation.setLoop(THREE.LoopOnce);
-    animation.clampWhenFinished = true;
-    animation.timeScale = state ? -1 : 1;
-    animation.paused = false;
+export function PlayAnimation(animation_enum) {
+  const animations_array = AnimationsMap.get(animation_enum);
+
+  if (animations_array === undefined) {
+    console.error(`Animation ${animation_enum} not found.`);
+    return;
   }
 
-  animation.play();
+  const f_anim = animations_array[0];
+  const s_anim = animations_array[1];
 
-  return !state;
+  f_anim.reset();
+  f_anim.speed = SPEED_MULTIPLIER;
+  f_anim.setLoop(THREE.LoopPingPong);
+  f_anim.repetitions = 2;
+  f_anim.play();
+
+  setTimeout(() => {
+    s_anim.reset();
+    s_anim.speed = SPEED_MULTIPLIER;
+    s_anim.setLoop(THREE.LoopPingPong);
+    s_anim.repetitions = 2;
+    s_anim.play();
+  }, f_anim.getClip().duration * 2000);
 }
-
 
 /*
  * React aproach to load components
-*/
+ */
 
 const navbar = $("#navbar-component");
 const footer = $("#footer-component");

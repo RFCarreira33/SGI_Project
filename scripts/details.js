@@ -17,79 +17,18 @@ const cor_default = new THREE.Color(0xffffff);
 const steel_texture = textureLoader.load(TEXTURES_PATH + "/steel.png");
 
 // Interactions buttons
-const abajur_btn = $("#abajur-btn");
-const longArm_btn = $("#longArm-btn");
-const shortArm_btn = $("#shortArm-btn");
-const support_btn = $("#support-btn");
-const armToAbajur_btn = $("#armToAbajur-btn");
-const color_picker = $("#color-picker");
+const animation_select = $("#animation-select");
+const play_button = $("#play-btn");
 
-abajur_btn.on("change", (e) => {
-  if (!mixer) {
-    return;
-  }
-
-  const name =
-    e.target.value > 0
-      ? ANIMATION_NAMES.ARM_TO_ABAJUR_F
-      : ANIMATION_NAMES.ARM_TO_ABAJUR_B;
-  let animation = AnimationsMap.get(name);
-  animation.state = PlayAnimation(animation.animation, animation.state);
+play_button.on("click", () => {
+  PlayAnimation(animation_select.val());
 });
 
-longArm_btn.on("change", (e) => {
-  if (!mixer) {
-    return;
-  }
-
-  const name =
-    e.target.value > 0
-      ? ANIMATION_NAMES.LONG_ARM_F
-      : ANIMATION_NAMES.LONG_ARM_B;
-  let animation = AnimationsMap.get(name);
-  animation.state = PlayAnimation(animation.animation, animation.state);
-});
-
-shortArm_btn.on("change", (e) => {
-  if (!mixer) {
-    return;
-  }
-
-  const name =
-    e.target.value > 0
-      ? ANIMATION_NAMES.SHORT_ARM_F
-      : ANIMATION_NAMES.SHORT_ARM_B;
-  let animation = AnimationsMap.get(name);
-  animation.state = PlayAnimation(animation.animation, animation.state);
-});
-
-support_btn.on("change", (e) => {
-  if (!mixer) {
-    return;
-  }
-
-  const name =
-    e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
-  let animation = AnimationsMap.get(name);
-  animation.state = PlayAnimation(animation.animation, animation.state);
-});
-
-armToAbajur_btn.on("change", (e) => {
-  if (!mixer) {
-    return;
-  }
-
-  const name =
-    e.target.value > 0 ? ANIMATION_NAMES.SUPORT_L : ANIMATION_NAMES.SUPORT_R;
-  let animation = AnimationsMap.get(name);
-  animation.state = PlayAnimation(animation.animation, animation.state);
-});
-
-color_picker.on("change", (event) => {
-  // create material from color
-  const color = new THREE.Color(event.target.value);
-  abajurMesh.material.color = color;
-});
+// color_picker.on("change", (event) => {
+//   // create material from color
+//   const color = new THREE.Color(event.target.value);
+//   abajurMesh.material.color = color;
+// });
 
 // Criar cena do threeJS e expor na consola
 scene = new THREE.Scene();
@@ -99,7 +38,7 @@ window.cena = scene;
 canvas = document.getElementById("three-canvas");
 renderer = new THREE.WebGLRenderer({ canvas });
 renderer.shadowMap.enabled = true;
-renderer.setSize(canvas.clientWidth * 2, canvas.clientHeight * 2);
+renderer.setSize(canvas.clientWidth * 1.3, canvas.clientHeight * 1.5, false);
 // renderer.setSize(window.innerWidth, window.innerHeight)
 // document.body.appendChild(renderer.domElement)
 
@@ -129,14 +68,12 @@ new GLTFLoader().load(
     scene.add(gltf.scene);
 
     mixer = new THREE.AnimationMixer(gltf.scene);
-    const clips = gltf.animations;
 
-    // ease of use and state management
-    clips.forEach((clip) => {
-      AnimationsMap.set(clip.name, {
-        animation: mixer.clipAction(clip),
-        state: false,
-      });
+    gltf.animations.forEach((clip) => {
+      const name = clip.name.slice(0, -1);
+
+      if (!AnimationsMap.has(name)) AnimationsMap.set(name, []);
+      AnimationsMap.get(name).push(mixer.clipAction(clip));
     });
 
     suporte = scene.getObjectByName("Support");
