@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import * as SGI_Example from "./example_scene.min.js";
-import { ANIMATION_NAMES, AnimationsMap, PlayAnimation } from "./common.js";
+import { AnimationsMap, PlayAnimation } from "./common.js";
 import { TEXTURES_PATH } from "./common.js";
 
 // Model parts
