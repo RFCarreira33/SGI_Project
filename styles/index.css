@@ -103,6 +103,10 @@
   }
 }
 
+.texture-btn {
+  height: 52px;
+}
+
 /* Overrides */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

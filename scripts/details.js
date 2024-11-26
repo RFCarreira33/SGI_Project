@@ -14,14 +14,29 @@ textureLoader = new THREE.TextureLoader();
 
 // Constants
 const cor_default = new THREE.Color(0xffffff);
-const steel_texture = textureLoader.load(TEXTURES_PATH + "/steel.png");
+
+// Load textures
+const texture_map = new Map();
+texture_map.set("fabric", textureLoader.load(TEXTURES_PATH + "/fabric.png"));
+texture_map.set("ugly-fabric", textureLoader.load(TEXTURES_PATH + "/ugly-fabric.png"));
+texture_map.set("couch-fabric", textureLoader.load(TEXTURES_PATH + "/couch-fabric.png"));
+texture_map.set("picnic-fabric", textureLoader.load(TEXTURES_PATH + "/picnic-fabric.png"));
+texture_map.set("is-this-even-fabric", textureLoader.load(TEXTURES_PATH + "/is-this-even-fabric.png"));
+texture_map.set("steel", textureLoader.load(TEXTURES_PATH + "/steel.png"));
+
 
 // Interactions buttons
 const animation_select = $("#animation-select");
 const play_button = $("#play-btn");
+const texture_btns = $(".texture-btn");
 
 play_button.on("click", () => {
   PlayAnimation(animation_select.val());
+});
+
+texture_btns.on("click", (e) => {
+  const material = $(e.target).attr("name");
+  abajurMesh.material.map = texture_map.get(material);
 });
 
 // color_picker.on("change", (event) => {
@@ -38,7 +53,7 @@ window.cena = scene;
 canvas = document.getElementById("three-canvas");
 renderer = new THREE.WebGLRenderer({ canvas });
 renderer.shadowMap.enabled = true;
-renderer.setSize(canvas.clientWidth * 1.3, canvas.clientHeight * 1.5, false);
+renderer.setSize(canvas.clientWidth * 1.2, canvas.clientHeight * 1.2, false);
 // renderer.setSize(window.innerWidth, window.innerHeight)
 // document.body.appendChild(renderer.domElement)
 
@@ -66,6 +81,7 @@ new GLTFLoader().load(
     // informacao: 1 unidade = 0.1m = 1 dm = 10 cm
 
     scene.add(gltf.scene);
+    const steel_texture = texture_map.get("steel");
 
     mixer = new THREE.AnimationMixer(gltf.scene);
 
@@ -86,7 +102,6 @@ new GLTFLoader().load(
           specular: 0x373737,
           shininess: 80,
           map: steel_texture,
-          side: THREE.DoubleSide,
         });
 
         abajurMesh.material.map = steel_texture;
