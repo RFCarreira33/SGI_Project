@@ -105,6 +105,9 @@
 
 .texture-btn {
   height: 52px;
+  border-radius: 5px;
+  padding: 2px;
+  cursor: pointer;
 }
 
 /* Overrides */

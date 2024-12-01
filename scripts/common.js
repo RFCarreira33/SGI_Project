@@ -4,18 +4,15 @@ export const TEXTURES_PATH = "/assets/textures";
 export const PRODUCTS_PATH = "/assets/products";
 const SPEED_MULTIPLIER = 0.5;
 
-export const ANIMATION_NAMES = Object.freeze({
-  ABAJUR_R: "AbajurJointR",
-  ABAJUR_L: "AbajurJointL",
-  ARM_TO_ABAJUR_B: "ArmToAbajurB",
-  ARM_TO_ABAJUR_F: "ArmToAbajurF",
-  LONG_ARM_F: "LongArmF",
-  LONG_ARM_B: "LongArmB",
-  SHORT_ARM_F: "ShortArmF",
-  SHORT_ARM_B: "ShortArmB",
-  SUPORT_L: "SuportJointL",
-  SUPORT_R: "SuportJointR",
-});
+export const TEXTURE_NAMES = Object.freeze([
+  "fabric",
+  "ugly-fabric",
+  "couch-fabric",
+  "picnic-fabric",
+  "is-this-even-fabric",
+  "steel_dark",
+  "steel_light",
+]);
 
 /**
  * Map animation name to their respective THREE.js animation action.
@@ -23,6 +20,12 @@ export const ANIMATION_NAMES = Object.freeze({
  * @type {Map<string, [THREE.AnimationAction]>}
  */
 export const AnimationsMap = new Map();
+
+/**
+ * Map texture name to their respective THREE.js texture.
+ * @type {Map<string, THREE.Texture>}
+ */
+export const TexturesMap = new Map();
 
 /**
  * Plays an animation based on the provided state.
