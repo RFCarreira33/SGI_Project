@@ -6,6 +6,7 @@
 \usepackage{fancyhdr} % header and footer
 \usepackage{everypage}
 \usepackage{hyperref}
+\usepackage{array}
 \graphicspath{ {./images} }
 
 \hypersetup{
@@ -76,6 +77,169 @@
 
 \newpage
 \section{Avaliação heurística}
+
+\begin{center}
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{|m{3cm}|m{12cm}|}
+    \hline
+    \multicolumn{2}{|c|}{\textbf{Registo 1}} \\ \hline
+    \textbf{Tarefa}       & Acesso a página de Login/Registo \\ \hline
+    \textbf{Local}        & Ao abrir a página de Login/Registo \\ \hline
+    \textbf{Heurística}   & 4 \\ \hline
+    \textbf{Descrição}    & O footer presente nesta página não se encontra no fundo da página. \\ \hline
+    \textbf{Frequência}   & Apenas uma vez \\ \hline
+    \textbf{Persistência} & Persistente \\ \hline
+    \textbf{Severidade}   & 1 \\ \hline
+    \textbf{Solução}      & Fazer com que o footer fique no fundo da página mesmo que está não tenha conteudo sufiente para preencher uma página completa. \\ \hline
+    \end{tabular}
+\end{table}
+
+\vspace{0.5cm}
+\includegraphics[width=\textwidth, keepaspectratio]{heuristics/01footer_registo.png}
+    
+
+\newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 2}} \\ \hline
+        \textbf{Tarefa}       & Visualizar detalhes do produto. \\ \hline
+        \textbf{Local}        & Ao editar a quantidade pretendida de um produto. \\ \hline
+        \textbf{Heurística}   & 4, 8 \\ \hline
+        \textbf{Descrição}    & A utilização de um input numérico com botões de '+' e '-' é mais intuitiva e dinâmico do que o uso de um input do tipo select. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 0 \\ \hline
+        \textbf{Solução}      & Utilizar um input numérico com limite variável conforme o produto e botões de incremento.\\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/02input_quantidade.png}
+
+\newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 3}} \\ \hline
+        \textbf{Tarefa}       & Acedar ao carrinho \\ \hline
+        \textbf{Local}        & Página de carrinho \\ \hline
+        \textbf{Heurística}   & 4  \\ \hline
+        \textbf{Descrição}    & Os breadcrumbs estão muito próximos da margem da página. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 1 \\ \hline
+        \textbf{Solução}      & Adicionar uma margem entre o início da página e os breadcrumbs. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/03breadcrumbs_carrinho.png}
+
+\newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 4}} \\ \hline
+        \textbf{Tarefa}       & Criar uma conta\\ \hline
+        \textbf{Local}        & Ao aceder a página de Registo \\ \hline
+        \textbf{Heurística}   & 5  \\ \hline
+        \textbf{Descrição}    & A distinção entre particular e empresa é feita no campo de gênero. \\ \hline
+        \textbf{Frequência}   & Apenas uma vez \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 2 \\ \hline
+        \textbf{Solução}      & Adicionar um novo campo de input para realizar a distinção entre particular e empresa. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/04genero_registo.png}
+
+    \newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 5}} \\ \hline
+        \textbf{Tarefa}       & Abrir a página inicial \\ \hline
+        \textbf{Local}        & Página principal do website \\ \hline
+        \textbf{Heurística}   & 8  \\ \hline
+        \textbf{Descrição}    & O banner animado é excessivamente grande em relação à pouca informação que apresenta, ofuscando o restante conteúdo. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 1 \\ \hline
+        \textbf{Solução}      &Reduzir o tamanho deste banner. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/05informacao_homepage.png}
+
+    \newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 6}} \\ \hline
+        \textbf{Tarefa}       & Criação de conta \\ \hline
+        \textbf{Local}        & Página de registo \\ \hline
+        \textbf{Heurística}   & 3  \\ \hline
+        \textbf{Descrição}    & O campo do número de telemóvel e o campo da morada não são opcionais. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 0 \\ \hline
+        \textbf{Solução}      & Deixar estas informações como opcionais e torná-las obrigatórias apenas ao realizar a compra. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/06telefone_registo.png}
+
+    \newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 7}} \\ \hline
+        \textbf{Tarefa}       & Remover um produto de carrinho \\ \hline
+        \textbf{Local}        & Página do carrinho \\ \hline
+        \textbf{Heurística}   & 5, 9  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma confirmação ao tentar remover um artigo do carrinho. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 2 \\ \hline
+        \textbf{Solução}      & Adicionar um pop up de confirmação. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/07confirmacao_carrinho.png}
+
+    \newpage
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 7}} \\ \hline
+        \textbf{Tarefa}       & Ao efetuar o registo \\ \hline
+        \textbf{Local}        & Página do registo \\ \hline
+        \textbf{Heurística}   & 5, 9  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma validação para o código postal. \\ \hline
+        \textbf{Frequência}   & Apenas uma vez \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 3 \\ \hline
+        \textbf{Solução}      & Adicionar validação a este campo. \\ \hline
+        \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/08validacao_postal_registo.png}
+\end{center}
 
 \newpage
 \section{Análise de Utilizadores e Tarefas}
