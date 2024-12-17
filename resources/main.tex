@@ -108,8 +108,8 @@
         \multicolumn{2}{|c|}{\textbf{Registo 2}} \\ \hline
         \textbf{Tarefa}       & Visualizar detalhes do produto. \\ \hline
         \textbf{Local}        & Ao editar a quantidade pretendida de um produto. \\ \hline
-        \textbf{Heurística}   & 4, 8 \\ \hline
-        \textbf{Descrição}    & A utilização de um input numérico com botões de '+' e '-' é mais intuitiva e dinâmico do que o uso de um input do tipo select. \\ \hline
+        \textbf{Heurística}   & 4 \\ \hline
+        \textbf{Descrição}    & A utilização de um input numérico com botões de '+' e '-' é mais intuitiva e standard do que o uso de um input do tipo select. \\ \hline
         \textbf{Frequência}   & Sempre \\ \hline
         \textbf{Persistência} & Persistente \\ \hline
         \textbf{Severidade}   & 0 \\ \hline
@@ -117,15 +117,30 @@
         \end{tabular}
     \end{table}
     
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 3}} \\ \hline
+        \textbf{Tarefa}       & Visualizar detalhes do produto. \\ \hline
+        \textbf{Local}        & Ao editar a quantidade pretendida de um produto. \\ \hline
+        \textbf{Heurística}   & 8 \\ \hline
+        \textbf{Descrição}    & A utilização de um input numérico com botões de '+' e '-' é mais minimalista do que o uso de um input do tipo select. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 0 \\ \hline
+        \textbf{Solução}      & Utilizar um input numérico com limite variável conforme o produto e botões de incremento.\\ \hline
+        \end{tabular}
+    \end{table}
     \vspace{0.5cm}
-    \includegraphics[width=\textwidth, keepaspectratio]{heuristics/02input_quantidade.png}
+    \includegraphics[width=0.7\textwidth]{heuristics/02input_quantidade.png}
 
 \newpage
     \begin{table}[h!]
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 3}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 4}} \\ \hline
         \textbf{Tarefa}       & Acedar ao carrinho \\ \hline
         \textbf{Local}        & Página de carrinho \\ \hline
         \textbf{Heurística}   & 4  \\ \hline
@@ -145,7 +160,7 @@
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 4}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 5}} \\ \hline
         \textbf{Tarefa}       & Criar uma conta\\ \hline
         \textbf{Local}        & Ao aceder a página de Registo \\ \hline
         \textbf{Heurística}   & 5  \\ \hline
@@ -165,7 +180,7 @@
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 5}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 6}} \\ \hline
         \textbf{Tarefa}       & Abrir a página inicial \\ \hline
         \textbf{Local}        & Página principal do website \\ \hline
         \textbf{Heurística}   & 8  \\ \hline
@@ -185,7 +200,7 @@
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 6}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 7}} \\ \hline
         \textbf{Tarefa}       & Criação de conta \\ \hline
         \textbf{Local}        & Página de registo \\ \hline
         \textbf{Heurística}   & 3  \\ \hline
@@ -205,11 +220,11 @@
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 7}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 8}} \\ \hline
         \textbf{Tarefa}       & Remover um produto de carrinho \\ \hline
         \textbf{Local}        & Página do carrinho \\ \hline
-        \textbf{Heurística}   & 5, 9  \\ \hline
-        \textbf{Descrição}    & Não há nenhuma confirmação ao tentar remover um artigo do carrinho. \\ \hline
+        \textbf{Heurística}   & 5  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma confirmação ao tentar remover um artigo do carrinho, podendo levar à remoção por acidente. \\ \hline
         \textbf{Frequência}   & Sempre \\ \hline
         \textbf{Persistência} & Persistente \\ \hline
         \textbf{Severidade}   & 2 \\ \hline
@@ -217,6 +232,22 @@
         \end{tabular}
     \end{table}
     
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 9}} \\ \hline
+        \textbf{Tarefa}       & Remover um produto de carrinho \\ \hline
+        \textbf{Local}        & Página do carrinho \\ \hline
+        \textbf{Heurística}   & 9  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma confirmação ao tentar remover um artigo do carrinho, caso houvesse a confirmação ajudaria a recuperar entes de remover sem querer. \\ \hline
+        \textbf{Frequência}   & Sempre \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 2 \\ \hline
+        \textbf{Solução}      & Adicionar um pop up de confirmação. \\ \hline
+        \end{tabular}
+    \end{table}
+
     \vspace{0.5cm}
     \includegraphics[width=\textwidth, keepaspectratio]{heuristics/07confirmacao_carrinho.png}
 
@@ -225,11 +256,27 @@
         \centering
         \begin{tabular}{|m{3cm}|m{12cm}|}
         \hline
-        \multicolumn{2}{|c|}{\textbf{Registo 7}} \\ \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 10}} \\ \hline
         \textbf{Tarefa}       & Ao efetuar o registo \\ \hline
         \textbf{Local}        & Página do registo \\ \hline
-        \textbf{Heurística}   & 5, 9  \\ \hline
-        \textbf{Descrição}    & Não há nenhuma validação para o código postal. \\ \hline
+        \textbf{Heurística}   & 5  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma validação para o código postal, levando a possiveis abusos no sistema com códigos postais inválidos. \\ \hline
+        \textbf{Frequência}   & Apenas uma vez \\ \hline
+        \textbf{Persistência} & Persistente \\ \hline
+        \textbf{Severidade}   & 3 \\ \hline
+        \textbf{Solução}      & Adicionar validação a este campo. \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{3cm}|m{12cm}|}
+        \hline
+        \multicolumn{2}{|c|}{\textbf{Registo 11}} \\ \hline
+        \textbf{Tarefa}       & Ao efetuar o registo \\ \hline
+        \textbf{Local}        & Página do registo \\ \hline
+        \textbf{Heurística}   & 9  \\ \hline
+        \textbf{Descrição}    & Não há nenhuma validação para o código postal, fazendo com que o utilizador não consiga corrigir para um código postal válido caso faça erros. \\ \hline
         \textbf{Frequência}   & Apenas uma vez \\ \hline
         \textbf{Persistência} & Persistente \\ \hline
         \textbf{Severidade}   & 3 \\ \hline
@@ -240,6 +287,40 @@
     \vspace{0.5cm}
     \includegraphics[width=\textwidth, keepaspectratio]{heuristics/08validacao_postal_registo.png}
 \end{center}
+\newpage
+
+\centering
+\subsection*{Resumo da avaliação heurística}
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{0.5cm}|m{12cm}|m{0.5cm}|}
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Heurística}} \\ \hline
+        \textbf{1}  & Visibilidade do estado do sistema                        & 0 \\ \hline
+        \textbf{2}  & Correspondência entre o sistema e o mundo real           & 0 \\ \hline
+        \textbf{3}  & Liberdade e controlo pelo utilizador                     & 1 \\ \hline
+        \textbf{4}  & Consistência e standards                                 & 3 \\ \hline
+        \textbf{5}  & Prevenção de erros                                       & 3 \\ \hline
+        \textbf{6}  & Reconhecer em vez de relembrar                           & 0 \\ \hline
+        \textbf{7}  & Flexibilidade e eficiência de utilização                 & 0 \\ \hline
+        \textbf{8}  & Estética e desenho minimalista                           & 2 \\ \hline
+        \textbf{9}  & Ajuda utilizadores a reconhecer e recuperar dos erros    & 2 \\ \hline
+        \textbf{10} & Ajuda e documentação                                     & 0 \\ \hline
+        \end{tabular}
+    \end{table}
+
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|m{0.5cm}|m{12cm}|m{0.5cm}|}
+        \hline
+        \multicolumn{3}{|c|}{\textbf{Severidade}} \\ \hline
+        \textbf{0}  & Não existe consenso de que seja um problema de usabilidade   & 3 \\ \hline
+        \textbf{1}  & Problema cosmético                                           & 3 \\ \hline
+        \textbf{2}  & Problema menor                                               & 3 \\ \hline
+        \textbf{3}  & Problema significativo                                       & 2 \\ \hline
+        \textbf{4}  & Problema catastrófico                                        & 0 \\ \hline
+        \end{tabular}
+    \end{table}
 
 \newpage
 \section{Análise de Utilizadores e Tarefas}
