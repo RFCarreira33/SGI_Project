@@ -1,13 +1,18 @@
+## Requisites
+
+- Npm
+- Latex Utils (latexmk)
+- Make (optional)
+
 ## Development
 
-Requires a simple web server, npm and latex utils to compile pdf file.
+Use `make help` to see options or:
 
 ```sh
 # Web
 npm i 
-npx live-server # For example
+npx live-server
 
 # Pdf
-cd resources/
-latexmk -pdf main.tex
+latexmk -pdf -cd resources/main.tex
 ```
